@@ -15,8 +15,9 @@ export function links() {
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Fabian Kutsche",
+  title: "Fabian Kutsche - fkutsche.dev",
   viewport: "width=device-width,initial-scale=1",
+  description: "My personal web site",
 });
 
 export default function App() {
