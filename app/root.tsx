@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -9,9 +9,14 @@ import {
 } from "@remix-run/react";
 import styles from "./styles/app.css";
 
-export function links() {
-  return [{ rel: "stylesheet", href: styles }];
-}
+import FavIcon from "./assets/favicon/favicon.ico";
+
+export const links: LinksFunction = () => {
+  return [
+    { rel: "icon", href: FavIcon, type: "image/png" },
+    { rel: "stylesheet", href: styles },
+  ];
+};
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
