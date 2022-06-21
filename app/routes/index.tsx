@@ -54,6 +54,7 @@ export default function Index() {
                 viewBox="0 0 256 256"
                 className="w-5 h-5 fill-gray-400 hover:fill-gray-100"
               >
+                <title>E-Mail</title>
                 <g transform="translate(128 128) scale(0.72 0.72)">
                   <g transform="translate(-175.05 -175.05000000000004) scale(3.89 3.89)">
                     <path
@@ -84,7 +85,7 @@ export default function Index() {
           </div>
         </div>
       </header>
-      <footer className="text-gray-600 text-sm flex justify-center mb-8">
+      <footer className="text-gray-300 text-sm flex justify-center mb-8">
         &copy; Fabian Kutsche {new Date().getFullYear()}
       </footer>
     </div>
