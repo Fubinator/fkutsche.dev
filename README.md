@@ -1,4 +1,4 @@
-# Fabian Kutsche — personal website
+# Fabian Kutsche: personal website
 
 An Astro and Tailwind CSS personal website built around the CV in `../cv`. Static HTML, locally hosted fonts, responsive layouts, and no analytics or client-side framework runtime.
 
