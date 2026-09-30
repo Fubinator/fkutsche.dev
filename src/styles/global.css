@@ -306,16 +306,6 @@ h1 .serif:after {
 }
 
 
-.status-dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  background: #678c44;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px #76934912;
-  flex-shrink: 0;
-}
-
 
 .section {
   padding-block: 88px;
@@ -739,17 +729,9 @@ h2 {
   align-items: center;
   gap: 20px;
 }
-.contact-top .eyebrow {
-  font-size: 9px;
-  letter-spacing: 1px;
-  color: #d0dfbf;
-}
 .contact-top > span {
   font-size: 10px;
   color: #b9cbb0;
-}
-.contact-top .status-dot {
-  background: #b7d28c;
 }
 .contact-section h2 {
   font-size: 52px;
