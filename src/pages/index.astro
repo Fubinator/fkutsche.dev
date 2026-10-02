@@ -1,33 +1,10 @@
 ---
-import "@fontsource-variable/manrope";
 import "@fontsource-variable/dm-sans";
 import "../styles/global.css";
 import Arrow from "../components/Arrow.astro";
+import { Image } from "astro:assets";
+import portrait from "../assets/fabian-kutsche.png";
 
-const capabilities = [
-  {
-    number: "01",
-    title: "From idea to production.",
-    text: "I build across the stack, connecting thoughtful interfaces with reliable backend systems and the infrastructure that runs them.",
-    tags: ["TypeScript", "React", "Vue.js", "Node.js", "Go", "SQL"],
-  },
-  {
-    number: "02",
-    title: "Security from the start.",
-    text: "Security-critical products shaped how I work: from authentication and end-to-end encryption to cloud infrastructure and delivery.",
-    tags: ["AWS", "Terraform", "CI/CD", "ISO 27001", "BSI IT-Grundschutz"],
-  },
-  {
-    number: "03",
-    title: "Ownership beyond code.",
-    text: "I stay hands-on while setting technical direction, making architecture decisions, and helping a team deliver with confidence.",
-    tags: [
-      "Software architecture",
-      "Technical leadership",
-      "Product development",
-    ],
-  },
-];
 const description =
   "Fabian Kutsche: Senior Full-Stack Engineer and Technical Lead. Building security-critical web products with TypeScript, React, Go and AWS.";
 ---
@@ -37,14 +14,14 @@ const description =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f6f5ef" />
+    <meta name="theme-color" content="#f4f1eb" />
     <meta name="description" content={description} />
     <link rel="canonical" href={Astro.site} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Fabian Kutsche: Engineer. Builder. Technical lead."
+      content="Fabian Kutsche — Software Engineer & Technical Lead"
     />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={Astro.site} />
@@ -56,9 +33,9 @@ const description =
     </a>
     <header class="site-header wrap">
       <a class="wordmark" href="#" aria-label="Fabian Kutsche, home">
-        fabian kutsche<span>.</span>
+        Fabian Kutsche<span class="wordmark-role">Software engineer</span>
       </a>
-      <nav aria-label="Main navigation" class="flex items-center gap-7">
+      <nav aria-label="Main navigation" class="main-nav">
         <a class="nav-link" href="#work">
           Work
         </a>
@@ -72,229 +49,112 @@ const description =
     </header>
     <main id="main">
       <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="profile">
+          <div class="portrait">
+            <Image
+              src={portrait}
+              alt="Fabian Kutsche"
+              widths={[180, 360, 540]}
+              sizes="(max-width: 700px) 88px, 180px"
+              format="webp"
+              quality={85}
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="profile-caption">
+            <p>Fabian Kutsche</p>
+            <span>Horn-Bad Meinberg, Germany</span>
+          </div>
+        </div>
         <div class="hero-copy">
-          <p class="eyebrow">
-            <span class="short-line"></span> Senior Full-Stack Engineer ·
-            Technical Lead
-          </p>
-          <h1 id="hero-title">
-            Good software.
-            <br />
-            Built with <span class="serif">care.</span>
-          </h1>
+          <p class="eyebrow">Full-stack software engineer</p>
+          <h1 id="hero-title">I build dependable<br />web products.</h1>
           <p class="hero-description">
-            I’m Fabian. I turn complex problems into dependable web products,
-            bringing together hands-on engineering, thoughtful architecture, and
-            a security-first mindset.
+            I’m Fabian, a software engineer with a background in security-critical
+            products. I work across the stack, from the first architecture decisions
+            to the code and infrastructure that run in production.
           </p>
-          <div class="hero-actions flex flex-wrap items-center gap-6">
-            <a class="button" href="#work">
-              Explore my work <Arrow />
-            </a>
+          <div class="hero-actions">
+            <a class="button" href="#work">Explore my work <Arrow /></a>
             <a class="text-link" href="/cv/fabian-kutsche-en.pdf" download>
               Download CV <span aria-hidden="true">↓</span>
             </a>
           </div>
-          <p class="location">
-            <svg
-              width="15"
-              height="18"
-              viewBox="0 0 20 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.4"
-              aria-hidden="true"
-            >
-              <path d="M17 9c0 6-7 12-7 12S3 15 3 9a7 7 0 1 1 14 0Z" />
-              <circle cx="10" cy="9" r="2.4" />
-            </svg>{" "}
-            Based in Horn-Bad Meinberg, Germany
-          </p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-top">
-            <span>THE WAY I BUILD</span>
-            <span>↗</span>
-          </div>
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="art-axis axis-h"></div>
-          <div class="art-axis axis-v"></div>
-          <div class="layer layer-back">
-            <span>03 / LEADERSHIP</span>
-          </div>
-          <div class="layer layer-middle">
-            <span>02 / ARCHITECTURE</span>
-          </div>
-          <div class="layer layer-front">
-            <span>01 / ENGINEERING</span>
-            <span class="code-mark">&lt;/&gt;</span>
-            <span class="layer-foot">
-              Built on solid foundations.<span>↗</span>
-            </span>
-          </div>
-          <div class="art-bottom">
-            <span class="tiny-cross">+</span>
-            <span>THOUGHTFUL BY DESIGN.</span>
-            <span class="tiny-cross">+</span>
-          </div>
         </div>
       </section>
-      <section class="section wrap" aria-labelledby="approach-title">
+
+      <section class="work-section wrap" id="work" aria-labelledby="work-title">
         <div class="section-heading">
-          <p class="eyebrow">01 / What I bring</p>
-          <h2 id="approach-title">
-            The whole picture.
-            <br />
-            <span class="muted">Down to the details.</span>
-          </h2>
+          <h2 id="work-title">Selected work</h2>
+          <p>Built from scratch at turingpoint.</p>
         </div>
-        <div class="capabilities grid md:grid-cols-3">
-          {capabilities.map((item) => (
-            <article class="capability">
-              <span class="item-number">{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <ul class="tags" aria-label={`${item.title} Skills`}>
-                {item.tags.map((tag) => (
-                  <li>{tag}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section class="work-section" id="work" aria-labelledby="work-title">
-        <div class="wrap section">
-          <div class="section-heading heading-inline">
-            <div>
-              <p class="eyebrow">02 / Selected work</p>
-              <h2 id="work-title">Built from the ground up.</h2>
+        <article class="project">
+          <div class="project-heading">
+            <span class="project-category">Security &amp; compliance</span>
+            <h3><a href="https://turingsecure.com/">turingsecure <Arrow diagonal /></a></h3>
+            <p>Application security &amp; GRC platform</p>
+          </div>
+          <div class="project-content">
+            <p>A platform connecting penetration tests, vulnerabilities, and asset
+              management with governance, risk, and compliance. Teams can prioritize
+              findings, track remediation, and bring security evidence into their audits.</p>
+            <div class="project-detail">
+              <h4>My role</h4>
+              <p>Overall architecture and hands-on development across authentication,
+                reporting, frontend, backend, and delivery infrastructure.</p>
             </div>
-            <p>
-              Two security-critical products.
-              <br />
-              Several hundred projects and tenants.
-            </p>
+            <ul class="project-topics" aria-label="turingsecure focus areas">
+              <li>Vulnerability management</li><li>Asset management</li><li>GRC</li>
+            </ul>
           </div>
-          <div class="work-grid grid md:grid-cols-2 gap-6">
-            <article class="project">
-              <div class="project-visual security-visual" aria-hidden="true">
-                <div class="visual-label">TURINGSECURE / 01</div>
-                <div class="diagram">
-                  <div class="diagram-node node-top">ASSESS</div>
-                  <div class="diagram-line"></div>
-                  <div class="diagram-hub">
-                    <svg
-                      viewBox="0 0 48 48"
-                      width="39"
-                      height="39"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    >
-                      <path d="m24 4 15 6v12c0 10-15 21-15 21S9 32 9 22V10Z" />
-                      <path d="m17 23 5 5 10-11" />
-                    </svg>
-                  </div>
-                  <div class="diagram-branches"></div>
-                  <div class="diagram-bottom">
-                    <span class="diagram-node">REPORT</span>
-                    <span class="diagram-node">REMEDIATE</span>
-                  </div>
-                </div>
-                <span class="visual-caption">
-                  Application security connected to compliance
-                </span>
-              </div>
-              <div class="project-content">
-                <p class="eyebrow">Application security &amp; GRC platform</p>
-                <h3>turingsecure</h3>
-                <p>
-                  A platform connecting penetration tests, vulnerabilities, and
-                  asset management with governance, risk, and compliance. Teams
-                  can prioritize findings, track remediation, and bring security
-                  evidence into their audits.
-                </p>
-                <div class="project-detail">
-                  <span>My contribution</span>
-                  <p>
-                    Overall architecture and hands-on development across
-                    authentication, reporting, frontend, backend, and delivery
-                    infrastructure.
-                  </p>
-                </div>
-                <ul class="tags">
-                  <li>Vulnerability management</li>
-                  <li>Asset management</li>
-                  <li>GRC</li>
-                </ul>
-                <a class="text-link project-link" href="https://turingsecure.com/">
-                  Explore turingsecure.com <Arrow diagonal />
-                </a>
-              </div>
-            </article>
-            <article class="project">
-              <div class="project-visual encryption-visual" aria-hidden="true">
-                <div class="visual-label">KODADO / 02</div>
-                <div class="encryption-diagram">
-                  <span class="endpoint">A</span>
-                  <span class="connection"></span>
-                  <div class="lock">
-                    <svg
-                      width="34"
-                      height="42"
-                      viewBox="0 0 34 42"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    >
-                      <rect x="4" y="18" width="26" height="21" rx="3" />
-                      <path d="M10 18V11a7 7 0 0 1 14 0v7" />
-                      <circle cx="17" cy="28" r="2" />
-                      <path d="M17 30v3" />
-                    </svg>
-                  </div>
-                  <span class="connection"></span>
-                  <span class="endpoint">B</span>
-                </div>
-                <div class="cipher">a7f2 · 9c4e · b813 · 6d0a · e52f</div>
-                <span class="visual-caption">
-                  Client-side encryption · GraphQL data access
-                </span>
-              </div>
-              <div class="project-content">
-                <p class="eyebrow">Encrypted data toolkit</p>
-                <h3>Kodado</h3>
-                <p>
-                  A developer toolkit for storing and sharing end-to-end encrypted
-                  data. Built-in authentication, a GraphQL interface, and
-                  open-source TypeScript and Go SDKs let applications work with
-                  data that is decrypted only on the client.
-                </p>
-                <div class="project-detail">
-                  <span>My contribution</span>
-                  <p>
-                    Product architecture, core implementation, and technical
-                    leadership, with ownership spanning the application and its
-                    AWS infrastructure.
-                  </p>
-                </div>
-                <ul class="tags">
-                  <li>End-to-end encryption</li>
-                  <li>GraphQL</li>
-                  <li>TypeScript &amp; Go SDKs</li>
-                </ul>
-                <a class="text-link project-link" href="https://kodado.dev/">
-                  Explore kodado.dev <Arrow diagonal />
-                </a>
-              </div>
-            </article>
+        </article>
+        <article class="project">
+          <div class="project-heading">
+            <span class="project-category">Encryption &amp; developer tools</span>
+            <h3><a href="https://kodado.dev/">Kodado <Arrow diagonal /></a></h3>
+            <p>End-to-end encrypted data toolkit</p>
           </div>
-          <p class="work-note">
-            Selected work from my role as Head of Development. Illustrations
-            show concepts, not product interfaces.
-          </p>
+          <div class="project-content">
+            <p>A developer toolkit for storing and sharing end-to-end encrypted data.
+              Built-in authentication, a GraphQL interface, and open-source TypeScript
+              and Go SDKs let applications work with data decrypted only on the client.</p>
+            <div class="project-detail">
+              <h4>My role</h4>
+              <p>Product architecture, core implementation, and technical leadership,
+                with ownership spanning the application and its AWS infrastructure.</p>
+            </div>
+            <ul class="project-topics" aria-label="Kodado focus areas">
+              <li>End-to-end encryption</li><li>GraphQL</li><li>TypeScript &amp; Go SDKs</li>
+            </ul>
+          </div>
+        </article>
+        <p class="work-note">Together, these products grew to several hundred projects and tenants.</p>
+      </section>
+
+      <section class="practice-section" aria-labelledby="practice-title">
+        <div class="wrap practice-grid">
+          <div class="section-intro">
+            <h2 id="practice-title">How I work</h2>
+            <p>I stay close to the code, even when my responsibility goes beyond it.</p>
+          </div>
+          <div class="practice-list">
+            <div class="practice-item">
+              <h3>Across the stack</h3>
+              <p>Interfaces, backend systems, and the infrastructure that connects them.</p>
+              <p class="skill-list">TypeScript / React / Vue.js / Node.js / Go / SQL</p>
+            </div>
+            <div class="practice-item">
+              <h3>Security in the details</h3>
+              <p>Authentication, encryption, and delivery shaped by work on security-critical products.</p>
+              <p class="skill-list">AWS / Terraform / CI/CD / ISO 27001 / BSI IT-Grundschutz</p>
+            </div>
+            <div class="practice-item">
+              <h3>Shared responsibility</h3>
+              <p>Setting technical direction, making architecture decisions, and helping a team deliver.</p>
+              <p class="skill-list">Software architecture / Technical leadership / Product development</p>
+            </div>
+          </div>
         </div>
       </section>
       <section
@@ -303,12 +163,7 @@ const description =
         aria-labelledby="experience-title"
       >
         <div class="experience-intro">
-          <p class="eyebrow">03 / The journey</p>
-          <h2 id="experience-title">
-            A builder.
-            <br />
-            Always learning.
-          </h2>
+          <h2 id="experience-title">Experience</h2>
           <p>
             From an apprenticeship in software development to leading a team and
             owning products end to end.
@@ -362,12 +217,7 @@ const description =
       </section>
       <section class="learning wrap" aria-labelledby="learning-title">
         <div>
-          <p class="eyebrow">Still curious</p>
-          <h2 id="learning-title">
-            Learning is part
-            <br />
-            of the work.
-          </h2>
+          <h2 id="learning-title">Education &amp;<br /> qualifications</h2>
         </div>
         <div class="learning-detail">
           <h3>
@@ -414,29 +264,22 @@ const description =
         id="contact"
         aria-labelledby="contact-title"
       >
-        <div class="contact-top">
-          <span>Let’s make the next chapter a good one.</span>
+        <div class="contact-intro">
+          <p class="eyebrow">Get in touch</p>
+          <h2 id="contact-title">Let’s talk.</h2>
+          <p>About a product, a role, or a technical challenge.</p>
         </div>
-        <h2 id="contact-title">
-          Good things start
-          <br />
-          with a <span class="serif">conversation.</span>
-        </h2>
-        <div class="contact-bottom">
+        <div class="contact-details">
           <a class="contact-email" href="mailto:kutschefabian@gmail.com">
             kutschefabian@gmail.com <Arrow diagonal />
           </a>
-          <p>
-            Senior Full-Stack Engineer · Technical Lead
-            <br />
-            German native · Fluent in English
-          </p>
+          <p>German native · Fluent in English</p>
         </div>
       </section>
     </main>
     <footer class="wrap site-footer">
       <a class="wordmark" href="#">
-        fk<span>.</span>
+        FK
       </a>
       <p>© {new Date().getFullYear()} Fabian Kutsche</p>
       <nav aria-label="Social links and CV downloads">

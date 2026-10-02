@@ -6,8 +6,12 @@ test("page is accessible and fits the viewport", async ({ page }) => {
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Good software.Built with care.",
+    "I build dependableweb products.",
   );
+  const portrait = page.getByRole("img", { name: "Fabian Kutsche", exact: true });
+  await expect(portrait).toBeVisible();
+  await expect(portrait).toHaveJSProperty("complete", true);
+  await expect(portrait).not.toHaveJSProperty("naturalWidth", 0);
   await page.evaluate(() => document.fonts.ready);
   expect(
     await page.evaluate(
